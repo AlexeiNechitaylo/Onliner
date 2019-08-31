@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import unittest
-
+import pytest
 
 class Test_onliner(unittest.TestCase):
 	def setUp(self):
@@ -52,7 +52,6 @@ class Test_onliner(unittest.TestCase):
 	def test_onliner(self):
 		wd = self.wd
 		self.login(wd)
-		self.entry_button(wd)
 		self.find_goods(wd)
 		self.add_to_cart(wd)
 		self.click_onliner_header(wd)
