@@ -25,14 +25,9 @@ class Test_onliner(unittest.TestCase):
 		wd.find_element_by_css_selector("div.auth-form button.auth-button").click()
 		
 
-	def find_goods_and_add_to_cart(self, wd):
-		wd.find_element_by_css_selector("input.fast-search__input").clear()
-		wd.find_element_by_css_selector("input.fast-search__input").send_keys("духовая печь")
+	def choose_smth(self, wd):
+		entry_field = wd.find_element_by_css_selector("li.b-main-navigation__item:nth-child(5)").click()
 		
-		
-		
-	def tearDown(self):
-		self.wd.quit()
 '''
 	def click_cart(self, wd):
 		cart_icon = WebDriverWait(wd, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, "div#cart-desktop a.b-top-profile__cart")))
@@ -48,17 +43,18 @@ class Test_onliner(unittest.TestCase):
 		log_out_step_1.click()
 		log_out_step_2 = wd.find_element_by_css_selector("div.b-top-profile__logout a").click()
 
-
+'''
 	def test_onliner(self):
 		wd = self.wd
 		self.login(wd)
-		self.find_goods(wd)
-		self.add_to_cart(wd)
+		self.find_goods_and_add_to_cart(wd)
+		self.click_cart(wd)
 		self.click_onliner_header(wd)
 		self.logout(wd)
-'''
 
 
+	def tearDown(self):
+		self.wd.quit()
 
 
 if __name__== '__main__':
