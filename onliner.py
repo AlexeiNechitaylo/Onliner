@@ -26,7 +26,8 @@ class Test_onliner(unittest.TestCase):
 		
 
 	def choose_smth(self, wd):
-		entry_field = wd.find_element_by_css_selector("li.b-main-navigation__item:nth-child(5)").click()
+		entry_field = wd.find_element_by_css_selector("ul.b-main-navigation li.b-main-navigation__item:nth-child(6)").click()
+		region = wd.find_element_by_css_selector("div.service-form__input_width_xs")
 		
 '''
 	def click_cart(self, wd):
