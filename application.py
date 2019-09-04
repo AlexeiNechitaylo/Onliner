@@ -1,10 +1,12 @@
 from selenium import webdriver
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-class App:
+class Application:
+
     def __init__(self):
         self.wd = webdriver.Chrome()
 
