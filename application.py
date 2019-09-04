@@ -43,8 +43,8 @@ class Application:
         wd = self.wd
         log_out_step_1 = WebDriverWait(wd, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, "div#userbar.b-top-profile div.b-top-profile__image")))
         log_out_step_1.click()
-        wd.find_element_by_css_selector("div.b-top-profile__logout a").click()
-
+        log_out_step_2 = WebDriverWait(wd, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.b-top-profile__logout a")))
+        log_out_step_2.click()
 
     def destroy(self):
         self.wd.quit()
